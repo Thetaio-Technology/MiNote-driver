@@ -17,7 +17,7 @@
 
 1. Map the requested action to one of the supported commands.
 2. Validate required fields.
-3. Execute through CLI or `execute_command`.
+3. Prefer executing through `python scripts/cli/run_skill.py minote-todo ...`.
 4. Return the raw backend result.
 5. If the operation fails, check login state and selector stability first.
 

@@ -6,6 +6,8 @@ This skill is command-oriented.
 
 Inputs should be mapped to one of the existing command names exposed by `minote.execute_command` or `scripts/cli/mi_note_commands.py`.
 
+The preferred external entrypoint for agents is `scripts/cli/run_skill.py`.
+
 ## Input Schema
 
 Base shape:
@@ -17,6 +19,12 @@ Base shape:
     "title": "测试待办"
   }
 }
+```
+
+Equivalent CLI shape:
+
+```bash
+python scripts/cli/run_skill.py minote-todo <command> [flags]
 ```
 
 Supported commands:
@@ -34,6 +42,19 @@ Supported commands:
 ```
 
 ## Output Shape
+
+Unified skill runner returns:
+
+```json
+{
+  "skill": "minote-todo",
+  "result": {
+    "command": "create",
+    "title": "测试待办",
+    "ok": true
+  }
+}
+```
 
 Read commands return:
 

@@ -75,6 +75,8 @@ python scripts/cli/open_mi_cloud.py
 
 命令入口文件：`scripts/cli/mi_note_commands.py`
 
+统一 skill 入口文件：`scripts/cli/run_skill.py`
+
 ### 读取未完成待办
 
 ```bash
@@ -116,6 +118,27 @@ python scripts/cli/mi_note_commands.py restore "洗车"
 ```bash
 python scripts/cli/mi_note_commands.py delete "剪头发"
 ```
+
+## 统一 Skill 调用入口
+
+如果上层希望通过统一 skill 入口调用，而不是直接依赖具体命令脚本，可以使用：
+
+```bash
+python scripts/cli/run_skill.py minote-todo read-pending
+python scripts/cli/run_skill.py minote-todo create --title "明天下午买咖啡豆"
+python scripts/cli/run_skill.py minote-todo update --old-title "旧标题" --new-title "新标题"
+python scripts/cli/run_skill.py minote-todo complete --title "洗衣服"
+python scripts/cli/run_skill.py minote-todo restore --title "洗车"
+python scripts/cli/run_skill.py minote-todo delete --title "剪头发"
+```
+
+这个入口的作用是把：
+
+- skill 名
+- command 名
+- 参数
+
+统一收口到一个稳定 CLI，便于后续 agent 或调度层直接调用。
 
 ## Python 调用方式
 

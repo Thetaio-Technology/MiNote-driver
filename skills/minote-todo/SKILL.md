@@ -35,6 +35,7 @@ Explicitly out of scope:
 ## Project Entry Points
 
 - Browser launcher: `scripts/cli/open_mi_cloud.py`
+- Unified skill runner: `scripts/cli/run_skill.py`
 - CLI commands: `scripts/cli/mi_note_commands.py`
 - Client API: `src/minote/client.py`
 - Command executor: `src/minote/commands.py`
@@ -54,6 +55,13 @@ python scripts/cli/open_mi_cloud.py
 2. After the user finishes manual login, use the command runner:
 
 ```bash
+python scripts/cli/run_skill.py minote-todo read-pending
+python scripts/cli/run_skill.py minote-todo create --title "明天下午买咖啡豆"
+python scripts/cli/run_skill.py minote-todo update --old-title "旧标题" --new-title "新标题"
+python scripts/cli/run_skill.py minote-todo complete --title "洗衣服"
+python scripts/cli/run_skill.py minote-todo restore --title "洗车"
+python scripts/cli/run_skill.py minote-todo delete --title "剪头发"
+
 python scripts/cli/mi_note_commands.py read-pending
 python scripts/cli/mi_note_commands.py read-completed
 python scripts/cli/mi_note_commands.py create "明天下午买咖啡豆"
