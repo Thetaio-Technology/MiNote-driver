@@ -6,6 +6,8 @@ __pycache__/
 .ruff_cache/
 
 chrome_profile/
+bin/chromedriver.exe
+readme-demo/
 
 *.log
 
