@@ -8,6 +8,7 @@ __pycache__/
 chrome_profile/
 bin/chromedriver.exe
 readme-demo/
+conversations/
 
 *.log
 
