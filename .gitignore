@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+chrome_profile/
+
+*.log
+
+.DS_Store
+Thumbs.db
