@@ -1,5 +1,5 @@
-from .client import (
-    MiNoteClient,
+from ._types import (
+    MiNoteDriver,
     SECTION_ALL_NOTES,
     SECTION_COMPLETED,
     SECTION_PENDING,
@@ -7,6 +7,7 @@ from .client import (
     SECTION_UNCATEGORIZED,
     TodoItem,
 )
+from .client import MiNoteClient
 from .commands import (
     COMMAND_COMPLETE,
     COMMAND_CREATE,
@@ -17,3 +18,4 @@ from .commands import (
     COMMAND_UPDATE,
     execute_command,
 )
+from .http_client import MiNoteHttpClient

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import time
 
 from selenium import webdriver
@@ -11,29 +10,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 
-from .config import CHROMEDRIVER_EXE, CHROME_EXE, CHROME_USER_DATA_DIR, TARGET_URL
-
-
-SECTION_ALL_NOTES = "全部笔记"
-SECTION_UNCATEGORIZED = "未分类"
-SECTION_RECYCLE_BIN = "最近删除"
-SECTION_PENDING = "未完成"
-SECTION_COMPLETED = "已完成"
-
-SUPPORTED_SEARCH_SECTIONS = {
+from ._types import (
     SECTION_ALL_NOTES,
     SECTION_UNCATEGORIZED,
-    SECTION_PENDING,
     SECTION_COMPLETED,
-}
-
-
-@dataclass
-class TodoItem:
-    title: str
-    counter: str = ""
-    remind: str = ""
-    status: str = ""
+    SECTION_PENDING,
+    SECTION_RECYCLE_BIN,
+    SUPPORTED_SEARCH_SECTIONS,
+    TodoItem,
+)
+from .config import CHROMEDRIVER_EXE, CHROME_EXE, CHROME_USER_DATA_DIR, TARGET_URL
 
 
 class MiNoteClient:
